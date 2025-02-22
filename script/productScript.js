@@ -52,3 +52,6 @@ const displayProducts = (items) => {
 }
 
 document.addEventListener("DOMContentLoaded", fetchProduct)
+
+
+
