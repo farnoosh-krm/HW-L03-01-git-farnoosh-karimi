@@ -102,3 +102,30 @@ const searchProduct = () => {
     displayProducts(filteredproducts)
 }
 
+
+const categoryShow = () => {
+
+    const categories = [...new Set(products.map(product => product.category))]
+    const categoryFilter = document.getElementById("selectCategory")
+    categoryFilter.innerHTML = `<option>all categories</option>`
+
+    categories.forEach((category) => {
+
+        const option = document.createElement("option")
+        option.value = category
+        option.textContent = category
+        categoryFilter.appendChild(option)
+
+    })
+}
+
+
+const filterByCategory = () => {
+
+    const selectedCategory = document.getElementById("selectCategory").value
+    const filteredProducts = selectedCategory ?
+        products.filter((product) => product.category === selectedCategory)
+        : products
+        
+    displayProducts(filteredProducts)
+}
