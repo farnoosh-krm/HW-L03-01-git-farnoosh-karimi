@@ -15,6 +15,7 @@ const fetchProduct = async () => {
             products = JSON.parse(cachedData)
             displayProducts(products)
             categoryShow()
+            setTimeout(loadFiltersFromLocalStorage, 100)
         }
 
         const response = await fetch(API_URL);
@@ -59,6 +60,7 @@ const displayProducts = (items) => {
 document.addEventListener("DOMContentLoaded", () => {
     fetchProduct()
     displayCart()
+    saveFiltersToLocalStorage()
 })
 
 
@@ -135,6 +137,7 @@ const filterByCategory = () => {
         : products
 
     displayProducts(filteredProducts)
+    saveFiltersToLocalStorage()
 }
 
 
@@ -151,9 +154,10 @@ const filterByPrice = () => {
         : products.filter((product) => product.price <= maxPrice && product.price >= minPrice)
 
     displayProducts(filteredProducts)
+    saveFiltersToLocalStorage()
 }
 
-
+// WTF
 
 const addToCart = (id) => {
     const product = products.find(p => p.id === id)
@@ -162,17 +166,17 @@ const addToCart = (id) => {
     }
     localStorage.setItem("cart", JSON.stringify(cart))
     displayCart()
-};
+}
 
 const removeFromCart = (id) => {
     cart = cart.filter(item => item.id !== id)
     localStorage.setItem("cart", JSON.stringify(cart))
-    displayCart();
-};
+    displayCart()
+}
 
 const displayCart = () => {
     const cartList = document.getElementById("cart")
-    cartList.innerHTML = "";
+    cartList.innerHTML = ""
     if (cart.length === 0) {
         cartList.innerHTML = "<p>Cart is empty</p>"
         return;
@@ -186,6 +190,12 @@ const displayCart = () => {
             <button onclick="removeFromCart(${item.id})" style="background-color: rgb(255, 0, 0);padding: 0px 8px; width:70px; position: static; bottom: 10px; ">Remove</button>
         `
         cartList.appendChild(cartItem)
-    });
-};
+    })
+}
+
+
+
+
+
+
 
