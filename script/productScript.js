@@ -55,3 +55,33 @@ document.addEventListener("DOMContentLoaded", fetchProduct)
 
 
 
+const showsimilarProducts = (category) => {
+
+    selectedCategory = category
+    const similarProducts = products.filter(product => product.category === category);
+    displaySimilarProducts(similarProducts)
+}
+
+
+const displaySimilarProducts = (items) => {
+    
+    const similarProducts = document.getElementById("similarProducts")
+    similarProducts.innerHTML = ""
+
+    if (items.length === 0) {
+        similarProducts.innerHTML = "<p>No Similar Products Found</p>"
+        return
+    }
+
+    items.forEach(product => {
+
+        const productCard = document.createElement("div")
+        productCard.className = "product-card"
+        productCard.innerHTML = `
+        <img src="${product.image}" alt="${product.title}">
+        <h4>${product.title}</h4>
+        <p>Price: ${product.price}</p>
+        `
+        similarProducts.appendChild(productCard)
+    })
+}
