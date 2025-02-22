@@ -10,7 +10,7 @@ const fetchProduct = async () => {
         const cachedData = localStorage.getItem('products')
 
         if (cachedData) {
-            products.JSON.parse(cachedData)
+            products = JSON.parse(cachedData)
             displayProducts(products)
         }
 
@@ -38,7 +38,7 @@ const displayProducts = (items) => {
         productList.innerHTML = " <p>No Products Found</p>"
         return
     }
-    
+
     items.forEach(product => {
         const productCard = document.createElement("div")
         productCard.className = "product-card"
