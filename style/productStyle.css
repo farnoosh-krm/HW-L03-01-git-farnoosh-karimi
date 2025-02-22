@@ -9,20 +9,24 @@
 
 :root {
     --text-color: rgba(0, 0, 0, 0.586);
-    --background-color: rgb(239, 241, 255);
+    --background-color1: rgb(226, 230, 255);
+    --background-color2:rgb(252, 221, 239);
     --border-color: #CCC;
     --border-color-focus: rgba(211, 49, 179, 0.664);
     --shadow-color: #aaaa;
     --button-color: rgb(4, 67, 123);
     --button-color-hover: rgba(4, 67, 123, 0.797);
     --button-color-active: rgba(4, 67, 123, 0.616);
+    --button-color-filter: rgb(218, 10, 107);
+    --button-color-hover-filter: rgba(218, 10, 107, 0.777);
+    --button-color-active-filter: rgba(218, 10, 107, 0.556);;
 }
 
 body {
     margin: 20px;
     /* min-height: 600px; */
     color: var(--text-color);
-    background: var(--background-color);
+    background: linear-gradient(to right, var(--background-color1), var(--background-color2));
 }
 
 header h1 {
@@ -56,10 +60,12 @@ button {
 
 button:hover {
     background-color: var(--button-color-hover);
+    cursor: pointer;
 }
 
 button:active {
     background-color: var(--button-color-active);
+    cursor: pointer;
 }
 
 input {
@@ -124,7 +130,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-#selectCategory{
+#selectCategory {
     padding: 0px 8px;
     width: 200px;
     height: 50px;
@@ -133,4 +139,35 @@ h2 {
     border: none;
     outline: none;
     box-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+#filterbtn {
+    position: static;
+    padding: 0px 8px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 5px var(--shadow-color);
+    background-color: var(--button-color-filter);    
+}
+
+#filterbtn:hover{
+    background-color: var(--button-color-hover-filter);
+    cursor: pointer;
+}
+
+#filterbtn:active{
+    background-color: var(--button-color-active-filter);
+    cursor: pointer;
+
+}
+
+.price{
+    width: 150px;
+}
+
+#selectCategory{
+    margin-right: 10px;
 }
