@@ -2,6 +2,8 @@
 const API_URL = "https://fakestoreapi.com/products"
 let products = []
 let selectedCategory = null
+let cart = JSON.parse(localStorage.getItem("cart")) || []
+
 
 const fetchProduct = async () => {
 
@@ -44,15 +46,20 @@ const displayProducts = (items) => {
         const productCard = document.createElement("div")
         productCard.className = "product-card"
         productCard.innerHTML = `
-        <img src="${product.image}" alt="${product.title}"><h4>${product.title}</h4>
+        <img src="${product.image}" alt="${product.title}">
+        <h4>${product.title}</h4>
         <p>Price: ${product.price}</p>
+        <button onclick="addToCart(${product.id})">Add to Cart</button>
         <button onclick="showsimilarProducts(\`${product.category}\`)">Similar Products</button>
         `
         productList.appendChild(productCard)
     })
 }
 
-document.addEventListener("DOMContentLoaded", fetchProduct)
+document.addEventListener("DOMContentLoaded", ()=>{
+    fetchProduct()
+    displayCart()
+})
 
 
 
@@ -144,7 +151,4 @@ const filterByPrice = () => {
         : products.filter((product) => product.price <= maxPrice && product.price >= minPrice)
 
     displayProducts(filteredProducts)
-
 }
-
-
