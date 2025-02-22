@@ -12,6 +12,7 @@ const fetchProduct = async () => {
         if (cachedData) {
             products = JSON.parse(cachedData)
             displayProducts(products)
+            categoryShow()
         }
 
         const response = await fetch(API_URL);
@@ -64,7 +65,7 @@ const showsimilarProducts = (category) => {
 
 
 const displaySimilarProducts = (items) => {
-    
+
     const similarProducts = document.getElementById("similarProducts")
     similarProducts.innerHTML = ""
 
@@ -85,3 +86,19 @@ const displaySimilarProducts = (items) => {
         similarProducts.appendChild(productCard)
     })
 }
+
+
+let debounceTimeout; const debounceSearch = () => {
+    if (debounceTimeout) clearTimeout(debounceTimeout)
+    debounceTimeout = setTimeout(searchProduct, 300)
+}
+
+
+const searchProduct = () => {
+    const query = document.getElementById("search-input").value.toLowerCase()
+    const filteredproducts = products.filter(product =>
+        product.title.toLowerCase().includes(query)
+    )
+    displayProducts(filteredproducts)
+}
+
