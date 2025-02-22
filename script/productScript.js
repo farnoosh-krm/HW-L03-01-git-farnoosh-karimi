@@ -132,16 +132,19 @@ const filterByCategory = () => {
 
 
 const filterByPrice = () => {
-    const maxPrice = document.getElementById("priceFilter").value
+    const maxPrice = Number(document.getElementById("priceFilter").value) || Infinity
+    const minPrice = Number(document.getElementById("minPrice").value) || 0
 
-    if (!maxPrice) {
-        return
+    if (isNaN(maxPrice) && isNaN(minPrice)) {
+        return;
     }
 
     const filteredProducts = selectedCategory ?
-        products.filter((product) => product.category === selectedCategory && product.price <= maxPrice)
-        :products.filter((product) => product.price <= maxPrice)
+        products.filter((product) => product.category === selectedCategory && product.price <= maxPrice && product.price >= minPrice)
+        : products.filter((product) => product.price <= maxPrice && product.price >= minPrice)
 
     displayProducts(filteredProducts)
 
 }
+
+
