@@ -122,10 +122,26 @@ const categoryShow = () => {
 
 const filterByCategory = () => {
 
-    const selectedCategory = document.getElementById("selectCategory").value
+    selectedCategory = document.getElementById("selectCategory").value
     const filteredProducts = selectedCategory ?
         products.filter((product) => product.category === selectedCategory)
         : products
-        
+
     displayProducts(filteredProducts)
+}
+
+
+const filterByPrice = () => {
+    const maxPrice = document.getElementById("priceFilter").value
+
+    if (!maxPrice) {
+        return
+    }
+
+    const filteredProducts = selectedCategory ?
+        products.filter((product) => product.category === selectedCategory && product.price <= maxPrice)
+        :products.filter((product) => product.price <= maxPrice)
+
+    displayProducts(filteredProducts)
+
 }
