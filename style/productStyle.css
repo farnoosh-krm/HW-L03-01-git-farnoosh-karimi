@@ -10,7 +10,7 @@
 :root {
     --text-color: rgba(0, 0, 0, 0.586);
     --background-color1: rgb(226, 230, 255);
-    --background-color2:rgb(252, 221, 239);
+    --background-color2: rgb(252, 221, 239);
     --border-color: #CCC;
     --border-color-focus: rgba(211, 49, 179, 0.664);
     --shadow-color: #aaaa;
@@ -19,7 +19,8 @@
     --button-color-active: rgba(4, 67, 123, 0.616);
     --button-color-filter: rgb(218, 10, 107);
     --button-color-hover-filter: rgba(218, 10, 107, 0.777);
-    --button-color-active-filter: rgba(218, 10, 107, 0.556);;
+    --button-color-active-filter: rgba(218, 10, 107, 0.556);
+    ;
 }
 
 body {
@@ -55,7 +56,6 @@ button {
     left: 45px;
     right: 45px;
     bottom: 15px;
-    width: 150px;
 }
 
 button:hover {
@@ -70,7 +70,7 @@ button:active {
 
 input {
     padding: 0px 8px;
-    margin-right: 10px;
+    margin: 5px 10px 0 0;
     width: 250px;
     height: 50px;
     border-radius: 10px;
@@ -143,6 +143,7 @@ h2 {
 
 #filterbtn {
     position: static;
+    margin: 5px 10px 0 0;
     padding: 0px 8px;
     height: 50px;
     width: 150px;
@@ -150,24 +151,42 @@ h2 {
     border: none;
     outline: none;
     box-shadow: 2px 2px 5px var(--shadow-color);
-    background-color: var(--button-color-filter);    
+    background-color: var(--button-color-filter);
 }
 
-#filterbtn:hover{
+#filterbtn:hover {
     background-color: var(--button-color-hover-filter);
     cursor: pointer;
 }
 
-#filterbtn:active{
+#filterbtn:active {
     background-color: var(--button-color-active-filter);
     cursor: pointer;
 
 }
 
-.price{
+.price {
     width: 150px;
 }
 
-#selectCategory{
+#selectCategory {
     margin-right: 10px;
+}
+
+#buybtn {
+    background-color: rgb(255, 162, 0);
+}
+
+#buybtn:hover {
+    background-color: rgba(255, 162, 0, 0.784);
+}
+
+#buybtn:active {
+    background-color: rgba(255, 162, 0, 0.619);
+}
+
+#cartHeader{
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
 }
