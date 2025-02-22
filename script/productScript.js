@@ -49,14 +49,14 @@ const displayProducts = (items) => {
         <img src="${product.image}" alt="${product.title}">
         <h4>${product.title}</h4>
         <p>Price: ${product.price}</p>
-        <button onclick="addToCart(${product.id})">Add to Cart</button>
-        <button onclick="showsimilarProducts(\`${product.category}\`)">Similar Products</button>
+        <button onclick="showsimilarProducts(\`${product.category}\`)" style="width:140px;left: 15px">Similar Products</button>
+        <button id="buybtn" onclick="addToCart(${product.id})" style="width:70px; left: 165px; ">Buy</button>
         `
         productList.appendChild(productCard)
     })
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
     fetchProduct()
     displayCart()
 })
@@ -152,3 +152,40 @@ const filterByPrice = () => {
 
     displayProducts(filteredProducts)
 }
+
+
+
+const addToCart = (id) => {
+    const product = products.find(p => p.id === id)
+    if (!cart.some(item => item.id === id)) {
+        cart.push(product)
+    }
+    localStorage.setItem("cart", JSON.stringify(cart))
+    displayCart()
+};
+
+const removeFromCart = (id) => {
+    cart = cart.filter(item => item.id !== id)
+    localStorage.setItem("cart", JSON.stringify(cart))
+    displayCart();
+};
+
+const displayCart = () => {
+    const cartList = document.getElementById("cart")
+    cartList.innerHTML = "";
+    if (cart.length === 0) {
+        cartList.innerHTML = "<p>Cart is empty</p>"
+        return;
+    }
+    cart.forEach(item => {
+        const cartItem = document.createElement("div")
+        cartItem.className = "cart-item"
+        cartItem.innerHTML = `
+            <img src="${item.image}" alt="${item.title}" width="50">
+            <span>${item.title} - $${item.price}</span>
+            <button onclick="removeFromCart(${item.id})" style="background-color: rgb(255, 0, 0);padding: 0px 8px; width:70px; position: static; bottom: 10px; ">Remove</button>
+        `
+        cartList.appendChild(cartItem)
+    });
+};
+
