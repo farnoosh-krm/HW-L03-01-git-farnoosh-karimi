@@ -20,6 +20,10 @@
         <option value="">loading category</option>
     </select>
 
+    <input class="price" type="number" id="minPrice" placeholder="min price..">
+    <input class="price" type="number" id="priceFilter" placeholder="max price..">
+    <button id="filterbtn" onclick="filterByPrice()">filter</button>
+
 
     <div id="loadingProduct">loading product</div>
 
@@ -28,7 +32,7 @@
     <hr>
 
     <h2>Similar Product</h2>
-    <input type="number" id="priceFilter" placeholder="max price.." oninput="filterByPrice()">
+    
 
     <div id="similarProducts"></div>
 
