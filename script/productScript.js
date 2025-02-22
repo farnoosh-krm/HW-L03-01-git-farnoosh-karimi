@@ -189,3 +189,23 @@ const displayCart = () => {
     });
 };
 
+const saveFiltersToLocalStorage = () => {
+    const filters = {
+        category: selectedCategory,
+        minPrice: document.getElementById("minPrice").value,
+        maxPrice: document.getElementById("priceFilter").value
+    };
+    localStorage.setItem("filters", JSON.stringify(filters))
+}
+
+const loadFiltersFromLocalStorage = () => {
+    const savedFilters = JSON.parse(localStorage.getItem("filters"))
+    if (savedFilters) {
+        document.getElementById("selectCategory").value = savedFilters.category || "all categories"
+        document.getElementById("minPrice").value = savedFilters.minPrice || ""
+        document.getElementById("priceFilter").value = savedFilters.maxPrice || ""
+        selectedCategory = savedFilters.category === "all categories" ? null : savedFilters.category;
+        filterByCategory()
+        filterByPrice()
+    }
+}
