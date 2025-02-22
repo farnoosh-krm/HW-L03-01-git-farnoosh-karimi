@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,35 @@
 
     <link rel="stylesheet" href="./style/productStyle.css">
 </head>
+
 <body>
+
+    <h1>Product Management System</h1>
+
+    <h2>Product List</h2>
+    <input type="text" placeholder="search..." id="search-input" oninput="debounceSearch()">
+
+    <select name="selectCategory" id="selectCategory" onchange="filterByCategory()">
+        <option value="">loading category</option>
+    </select>
+
+
+    <div id="loadingProduct">loading product</div>
+
+    <div id="productList"></div>
+
+    <hr>
+
+    <h2>Similar Product</h2>
+    <input type="number" id="priceFilter" placeholder="max price.." oninput="filterByPrice()">
+
+    <div id="similarProducts"></div>
 
 
 
 
     <script src="./script/productScript.js"></script>
-    
+
 </body>
+
 </html>
