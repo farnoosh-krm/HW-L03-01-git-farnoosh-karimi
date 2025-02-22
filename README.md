@@ -33,7 +33,11 @@
  You can add and delete products from your cart.
  branch name: **shoppingCart**
 
- ## 9- Final Project:
+ ## 9- Save Shopping Cart in Local Storage:
+ Your cart is saved in local storage.
+ branch name: **saveCartInLocalStorage**
+
+ ## 10- Final Project:
  contains all features
  branch name: **final**
 
