@@ -6,9 +6,12 @@ let selectedCategory = null
 const fetchProduct = async () => {
 
     try {
+        
         const cachedData = localStorage.getItem('products')
+
         if (cachedData) {
             products.JSON.parse(cachedData)
+            displayProducts(products)
         }
 
         const response = await fetch(API_URL);
