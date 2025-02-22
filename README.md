@@ -29,7 +29,11 @@
  This part shows products between two prices (minimum price and maximum price).
  branch name: **filterPrice**
 
- ## 8- Final Project:
+ ## 8- Shopping Cart:
+ You can add and delete products from your cart.
+ branch name: **shoppingCart**
+
+ ## 9- Final Project:
  contains all features
  branch name: **final**
 
