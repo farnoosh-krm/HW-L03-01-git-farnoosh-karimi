@@ -1,63 +1,71 @@
 # Product System Management
- This project contains 9 parts:
 
- ## 1- Fetch the Product From Fake API:
- API address: [fake API](https://fakestoreapi.com/products)
+🌐 Live Demo
 
- branch name: **getProducts**
+Experience the app:[View Online]()
 
+This project contains 9 parts:
 
- ## 2- Save Fetched Data in Local Storage:
- data save in local storage
+## 1- Fetch the Product From Fake API:
 
- branch name: **saveInLocalStorage**
+API address: [fake API](https://fakestoreapi.com/products)
 
+branch name: **getProducts**
 
- ## 3- Show the Product:
-  show all product in the API
+## 2- Save Fetched Data in Local Storage:
 
-  branch name: **showAllProducts**
+data save in local storage
 
+branch name: **saveInLocalStorage**
 
- ## 4- Show Similar Product:
- This part shows similar products when clicking the button under each product.
+## 3- Show the Product:
 
- branch name: **showSimilarProduct**
+show all product in the API
 
+branch name: **showAllProducts**
 
- ## 5- Search Item:
- You can search for the product you want to find.
+## 4- Show Similar Product:
 
- branch name: **searchItem**
+This part shows similar products when clicking the button under each product.
 
+branch name: **showSimilarProduct**
 
- ## 6- Filter by Category:
- This part shows products in each category you select.
+## 5- Search Item:
 
- branch name: **filterCategory**
+You can search for the product you want to find.
 
+branch name: **searchItem**
 
- ## 7- Filter by Price:
- This part shows products between two prices (minimum price and maximum price).
+## 6- Filter by Category:
 
- branch name: **filterPrice**
+This part shows products in each category you select.
 
+branch name: **filterCategory**
 
- ## 8- Shopping Cart:
- You can add and delete products from your cart.
+## 7- Filter by Price:
 
- branch name: **shoppingCart**
+This part shows products between two prices (minimum price and maximum price).
 
+branch name: **filterPrice**
 
- ## 9- Save Shopping Cart in Local Storage:
- Your cart is saved in local storage.
+## 8- Shopping Cart:
 
- branch name: **saveCartInLocalStorage**
+You can add and delete products from your cart.
 
+branch name: **shoppingCart**
 
- ## 10- Final Project:
- contains all features
- 
- branch name: **final**
+## 9- Save Shopping Cart in Local Storage:
 
+Your cart is saved in local storage.
 
+branch name: **saveCartInLocalStorage**
+
+## 10- Final Project:
+
+contains all features
+
+branch name: **final**
+
+## License
+
+Made with ❤️ by [Farnoosh Karimi](https://github.com/farnoosh-krm)
